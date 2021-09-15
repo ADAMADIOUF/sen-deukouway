@@ -1,8 +1,8 @@
 const navbar = document.querySelector('#nav')
-const navToggle = document.querySelector('.btn-toggle')
-const btnClose = document.querySelector('.nav-close')
-const sidebar = document.querySelector('.sidebar')
-const date = document.querySelector('#date');
+const date = document.querySelector('#date')
+const navToggle = document.querySelector('.nav-toggle')
+const links = document.querySelector('.links')
+// add fixed class to navbar
 window.addEventListener('scroll', function () {
   if (window.pageYOffset > 80) {
     navbar.classList.add('navbar-fixed')
@@ -10,46 +10,12 @@ window.addEventListener('scroll', function () {
     navbar.classList.remove('navbar-fixed')
   }
 })
-navToggle.addEventListener('click', () => {
-  sidebar.classList.add('showNav')
+
+navToggle.addEventListener('click', function () {
+  links.classList.toggle('show-links')
 })
-btnClose.addEventListener('click', () => {
-  sidebar.classList.remove('showNav')
- })
 
-// const scrollLinks = document.querySelectorAll('.scroll-link')
-// scrollLinks.forEach((link) => {
-//   link.addEventListener('click', (e) => {
-//     e.preventDefault()
-//     links.classList.remove('show-links')
-
-//     const id = e.target.getAttribute('href').slice(1)
-//     const element = document.getElementById(id)
-
-//     let position
-//     if (navbar.classList.contains('fixed')) {
-//       position = element.offsetTop - 62
-//     } else {
-//       position = element.offsetTop - 124
-//     }
-//     if (window.innerWidth < 992) {
-//       if (navbar.classList.contains('fixed')) {
-//         position = element.offsetTop - 62
-//       } else {
-//         position = element.offsetTop - 332 - 62
-//       }
-//     }
-//     window.scrollTo({
-//       left: 0,
-
-//       top: position,
-//       behavior: 'smooth',
-//     })
-//   })
-// })
-
- date.innerHTML = new Date().getFullYear()
-
+date.innerHTML = new Date().getFullYear()
 
 // contact
 
