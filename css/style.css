@@ -112,183 +112,281 @@ p {
     width: 95vw;
   }
 }
+/* Navbar */
+.navbar {
+  width: 100%;
+  height: 8rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: -8rem;
+  padding: 3rem;
+  z-index: 10;
+  animation: animateNavbar 1s 0.5s forwards;
+  transition: height 0.5s;
+}
 
-/* home */
-.home{
- background: url(/images/banner-1.jpg);
- background-repeat: no-repeat;
- background-size: cover;
- background-position: center;
- object-fit: cover;
- height: 600px;
- width: 100%;
+.navbar.change {
+  height: 100vh;
 }
-/* navigation */
-nav {
-  background: var(--secondary-color);
-  box-shadow: var(--light-shadow);
+
+@keyframes animateNavbar {
+  0% {
+    top: -8rem;
+  }
+  100% {
+    top: 0;
+  }
 }
-.nav-header {
+
+.navbar-logo {
+  position: absolute;
+  top: 1.5rem;
+  left: 1rem;
+}
+
+.navbar-logo a {
+  font-family: "MADE Soulmaze", sans-serif;
+  font-size: 1.5rem;
+  color: #eee;
+  letter-spacing: 0.1rem;
+}
+
+.navbar-logo span {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #9e0e09;
+  font-family: "MADE Soulmaze";
+}
+
+.menu {
+  width: 3rem;
+  height: 4rem;
+  position: fixed;
+  z-index: 500;
+  top: 2rem;
+  right: 4rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-}
-.nav-toggle {
-  
-  font-size: 2rem;
-  color: var(--third-color);
-  background: transparent;
-  border-color: transparent;
-  transition: var(--transition);
+  flex-direction: column;
+  justify-content: space-evenly;
   cursor: pointer;
 }
-.nav-toggle:hover {
-  color: var(--black-choise);
-  transform: scale(1.5);
-}
-.logo {
-  font-size: 1.5rem;
-  text-transform: uppercase;
-}
-.logo span{
-  color: var(--third-color);
-}
-.links a {
-  color: var(--black-choise);
-  font-size: 1.5rem;
-  text-transform: capitalize;
-  letter-spacing: var(--spacing);
-  display: block;
-  padding: 0.5rem 1rem;
-  transition: var(--transition);
-}
-.links a:hover {
-  background: var(--third-color);
-  color: var(--black-choise);
-  padding-left: 1.5rem;
-  border-bottom:  1px solid var(--third-color);
-}
-.social-icons {
-  display: none;
-}
-.links {
-  height: 0;
-  overflow: hidden;
-  transition: var(--transition);
-}
-.show-links {
-  height: 13rem;
-}
-.navbar-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
+
+.line {
   width: 100%;
-  background: var(--choise-color);
-  z-index: 2;
-  box-shadow: var(--light-shadow);
+  height: 0.2rem;
+  background:var(--choise-color);
+  transition: transform 0.3s;
 }
-@media screen and (min-width: 800px) {
-  .nav-center {
-    max-width: 1170px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-  }
-  .nav-header {
-    padding: 0;
-  }
-  .nav-toggle {
-    display: none;
-  }
-  .links {
-    height: auto;
-    display: flex;
-  }
-  .links a {
-    padding: 0;
-    margin: 0 0.5rem;
-  }
-  .links a:hover {
-    padding: 0;
-    background: transparent;
-  }
-  .social-icons {
-    display: flex;
-  }
-  .social-icons a {
-    margin-right: 1rem;
-    font-size: 2rem;
-    color: var(--third-color);
-    transition: var(--transition);
-  }
-  .social-icons a:hover {
-    color: var(--black-choise);
+
+.line-1 {
+  width: 50%;
+}
+
+.line-3 {
+  width: 50%;
+  margin-left: auto;
+}
+
+.change .line-1 {
+  transform: translate(100%, 1rem) rotate(-35deg);
+  transform-origin: right;
+}
+
+.change .line-3 {
+  transform: translateY(-1rem) rotate(35deg);
+  transform-origin: right;
+}
+
+.nav-list {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+}
+
+.change .nav-list {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.7s 0.5s;
+}
+
+.nav-link {
+  font-family: "MADE Soulmaze", sans-serif;
+  font-size: 4rem;
+  letter-spacing: 0.3rem;
+  color: #fff;
+  margin: 2rem 0;
+  transition: color 0.4s;
+}
+
+.nav-link:hover {
+  color: #9e0e09;
+}
+/*  End of Navbar */
+
+/* Section 1 */
+.section-1 {
+  width: 100%;
+  height: 100vh;
+  background: url(/images/banner-1.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+}
+
+.banner-heading {
+  height: 20rem;
+  margin-bottom: 4rem;
+  perspective: 50rem;
+  overflow: hidden;
+}
+
+.banner-heading span {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0.3rem 0.3rem 0.6rem rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transform: translateZ(8rem);
+  opacity: 0;
+  letter-spacing: 3rem;
+}
+@media (min-width:768px) {
+  .banner-heading span{
+    font-size: 4rem;
   }
 }
 
-.form{
- background: var(--secondary-color);
- padding: 2rem;
- text-align: center;
-}
-.form h3{
- text-transform: uppercase;
- color: var(--choise-color);
- letter-spacing: var(--spacing);
-}
-.buttons-container{
- display: grid;
- grid-template-columns: repeat(2,1fr);
- 
-}
-.buttons-container a{
- font-size: 1.5rem;
- color: var(--black-choise);
- text-transform: capitalize;
+.heading-1 {
+  animation: animateHeading 12s 3s infinite;
 }
 
-input{
-position: relative;
-display: inline-block;
-font-size: 20px;
-transition: var(--transition);
-margin: 1rem 0;
-border-radius: 5px;
-text-align: center;
-cursor: pointer;
+.heading-2 {
+  animation: animateHeading 12s 6s infinite;
+}
 
+.heading-3 {
+  animation: animateHeading 12s 9s infinite;
 }
-input[type="search"]{
- background: var(--choise-color);
- outline: none;
- width: 200px;
- padding: 0 2rem;
- color: var(--choise-color);
+
+.heading-4 {
+  animation: animateHeading 12s 12s infinite;
 }
-::placeholder{
- color: var(--clr-black);
- text-transform: uppercase;
- font-weight: 300;
- letter-spacing: var(--spacing);
+
+
+@keyframes animateHeading {
+  0% {
+    transform: translateZ(8rem);
+    opacity: 0;
+    letter-spacing: 3rem;
+  }
+
+  3% {
+    transform: translateZ(0);
+    opacity: 1;
+    letter-spacing: 1.5rem;
+  }
+
+  25% {
+    transform: translateZ(0);
+    opacity: 1;
+    letter-spacing: 1.5rem;
+  }
+
+  28% {
+    transform: translateZ(8rem);
+    opacity: 0;
+    letter-spacing: 3rem;
+  }
+
+  100% {
+    transform: translateZ(8rem);
+    opacity: 0;
+    letter-spacing: 3rem;
+  }
 }
-.input-confirm{
- padding: 0.75rem 2rem;
- font-size: 1rem;
- border-radius: 5px;
- transition: var(--transition);
- cursor: pointer;
- color: var(--primary-color);
- text-transform: capitalize;
- cursor: pointer;
+
+.banner-paragraph {
+  font-size: 4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 30%;
+  margin: 0 auto 6rem auto;
+  padding: 1rem 0;
+  box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  animation: fadeAnimation 1s 1.5s forwards;
 }
-.input-confirm:hover{
- background: var(--black-choise);
- color: var(--white-choise);
+
+@keyframes fadeAnimation {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
+
+.banner-btn {
+  width: 30rem;
+  height: 6rem;
+  background: linear-gradient(to right, #9b0e0e, #7a1010);
+  color: #fff;
+  font-size: 2rem;
+  text-transform: uppercase;
+  border-radius: 3rem;
+  border: 0.1rem solid #800505;
+  box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.5);
+  text-shadow: 0.6rem 0.3rem 0.2rem rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  position: relative;
+  overflow: hidden;
+  animation: fadeAnimation 1s 2s forwards;
+}
+
+.banner-btn::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, #fff, transparent);
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transform: skewX(-30deg);
+  transition: left 0.5s;
+}
+
+.banner-btn:hover::before {
+  left: 100%;
+}
+/* End of Section 1 */
+
 
 /* services */
 .title-services{
@@ -304,6 +402,7 @@ input[type="search"]{
 }
 .service-text{
   font-size: 1.1rem;
+  max-width: 35rem;
 }
 .container-services{
  text-align: center;
